@@ -1,0 +1,33 @@
+{
+  "name": "girlpowersanity",
+  "private": true,
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)",
+  "main": "package.json",
+  "author": "Guro Prestegard <guro.prestegard@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "test": "sanity check"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^2.29.3",
+    "@sanity/components": "^2.14.0",
+    "@sanity/core": "^2.29.3",
+    "@sanity/default-layout": "^2.29.3",
+    "@sanity/default-login": "^2.29.3",
+    "@sanity/desk-tool": "^2.29.4",
+    "@sanity/vision": "^2.29.3",
+    "prop-types": "^15.6",
+    "react": "^16.2",
+    "react-dom": "^16.2",
+    "styled-components": "^5.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:GuroPrestegard/GIRLPOWER_kodeoppgave.git"
+  }
+}
