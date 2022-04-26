@@ -32,5 +32,7 @@ const LayoutWrapper = styled.div`
   display: flex;
   background-color: pink;
   height: 100%;
+  justify-content: center;
+  overflow-y: scroll;
 `
 

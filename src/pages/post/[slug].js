@@ -9,7 +9,7 @@ import styled from "styled-components";
 import React from "react";
 
 const directToHomePage = () => {
-    
+
 }
 
 const Post = ({post}) => {
@@ -22,55 +22,52 @@ const Post = ({post}) => {
     } = post || {}
     console.log(body)
     return (
-        <Layout>
-            <StyledArticle>
-                <Title>{title}</Title>
-                <button onClick={directToHomePage()}></button>
-                <Preamble>
-                        {authorImage && (
-                            <div>
-                                <img
-                                    src={urlForImage(authorImage)
-                                        .width(50)
-                                        .url()}
-                                    alt={`${name}'s picture`}
-                                />
-                            </div>
-                        )}
-                    <StyledColumn>
-                        <div>Skrive av {name}</div>
+        <StyledArticle>
+            <Title>{title}</Title>
+            <Preamble>
+                {authorImage && (
+                    <div>
+                        <img
+                            src={urlForImage(authorImage)
+                                .width(50)
+                                .url()}
+                            alt={`${name}'s picture`}
+                        />
+                    </div>
+                )}
+                <StyledColumn>
+                    <div>Skrive av {name}</div>
                     {categories && (
                         <StyledCategories>
                             {`Postet i: ${categories.map((category, i) => "" + category + (i < categories.length - 1 ? ", " : ""))}`}
                         </StyledCategories>
                     )}
-                    </StyledColumn>
-                </Preamble>
-                <StyledBody>
+                </StyledColumn>
+            </Preamble>
+            <StyledBody>
 
-                    <PortableText
-                        value={body}
-                        components={{
-                            types: {
-                                image: ({value}) => {
-                                    if (!value?.asset?._ref) {
-                                        return null
-                                    }
-                                    return (
-                                        <StyledImg
-                                            alt={value.alt || ' '}
-                                            loading="lazy"
-                                            src={urlForImage(value).width(1000).height(500).fit('max').auto('format')}
-                                        />
-                                    )
-                                },
-                            }
-                        }}
-                    />
-                </StyledBody>
-            </StyledArticle>
-            
-        </Layout>
+                <PortableText
+                    value={body}
+                    components={{
+                        types: {
+                            image: ({value}) => {
+                                if (!value?.asset?._ref) {
+                                    return null
+                                }
+                                return (
+                                    <StyledImg
+                                        alt={value.alt || ' '}
+                                        loading="lazy"
+                                        src={urlForImage(value).width(1000).height(500).fit('max').auto('format')}
+                                    />
+                                )
+                            },
+                        }
+                    }}
+                />
+            </StyledBody>
+        </StyledArticle>
+
     )
 }
 
@@ -88,27 +85,21 @@ const StyledArticle = styled.div`
   display: flex;
   flex-direction: column;
   background-color: white;
-  justify-content: space-evenly;
   margin: 5em;
   padding: 5em;
   align-items: center;
   border-radius: 15px;
-  min-height: 50%;
+  height: 100%;
   min-width: 50%;
+  
+
 `
 
 const StyledColumn = styled.div`
-    display: flex;
+  display: flex;
   flex-direction: column;
 `
 
-const Layout = styled.div`
-  display: flex;
-  background-color: ${backgroundColor};
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-`
 
 const StyledBody = styled.div`
   p {
@@ -121,6 +112,7 @@ const Preamble = styled.div`
   flex-direction: row;
   align-items: center;
   padding-top: 4em;
+
   img {
     border-radius: 50%;
     padding-right: 1em;
