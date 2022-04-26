@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Image from 'next/image'
 import staccLogo from "../../public/stacc_logo_white.png"
 import Header from "./Header";
-import Head from "next/head";
+import Link from "next/link";
 
 
 const Layout = ({children}) => {
@@ -11,7 +11,9 @@ const Layout = ({children}) => {
     return (
         <Content>
           <Header>
-            <Image src={staccLogo} layout="fill" objectFit="contain" />
+            <Link href={"/"}>
+              <Image src={staccLogo} layout="fill" objectFit="contain"/>
+            </Link>
           </Header>
         <LayoutWrapper>
           {children}
@@ -26,6 +28,10 @@ const Content = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  img{
+    cursor: pointer;
+  }
 `
 
 const LayoutWrapper = styled.div`

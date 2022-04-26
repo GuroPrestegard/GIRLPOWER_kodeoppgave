@@ -8,10 +8,6 @@ import {backgroundColor, Content, Title} from "../../styles/styles";
 import styled from "styled-components";
 import React from "react";
 
-const directToHomePage = () => {
-
-}
-
 const Post = ({post}) => {
     const {
         title = 'Missing title',
