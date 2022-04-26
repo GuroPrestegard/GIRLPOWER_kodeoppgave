@@ -61,7 +61,8 @@ const Post = ({post}) => {
                         }
                     }}
                 />
-            </StyledBody>
+        </StyledBody>
+           
         </StyledArticle>
 
     )
@@ -101,6 +102,7 @@ const StyledBody = styled.div`
     margin: 1em 0 1em 0;
   }
 `
+
 const Preamble = styled.div`
   display: flex;
   flex-direction: row;
