@@ -8,10 +8,6 @@ import {backgroundColor, Content, Title} from "../../styles/styles";
 import styled from "styled-components";
 import React from "react";
 
-const directToHomePage = () => {
-    
-}
-
 const Post = ({post}) => {
     const {
         title = 'Missing title',
@@ -25,7 +21,6 @@ const Post = ({post}) => {
         <Layout>
             <StyledArticle>
                 <Title>{title}</Title>
-                <button onClick={directToHomePage()}></button>
                 <Preamble>
                     {authorImage && (
                         <div>
