@@ -8,6 +8,9 @@ import {backgroundColor, Content, Title} from "../../styles/styles";
 import styled from "styled-components";
 import React from "react";
 
+const directToHomePage = () => {
+    
+}
 
 const Post = ({post}) => {
     const {
@@ -22,6 +25,7 @@ const Post = ({post}) => {
         <Layout>
             <StyledArticle>
                 <Title>{title}</Title>
+                <button onClick={directToHomePage()}></button>
                 <Preamble>
                         {authorImage && (
                             <div>
@@ -65,6 +69,7 @@ const Post = ({post}) => {
                     />
                 </StyledBody>
             </StyledArticle>
+            
         </Layout>
     )
 }
@@ -102,6 +107,7 @@ const Layout = styled.div`
   background-color: ${backgroundColor};
   justify-content: center;
   align-items: center;
+  width: 100%;
 `
 
 const StyledBody = styled.div`
