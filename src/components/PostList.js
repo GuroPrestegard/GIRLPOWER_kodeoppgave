@@ -24,7 +24,7 @@ const PostList = ({posts}) => {
                                                 alt={"thumbnail"}
                                             />
                                         )}
-                                        {title}</StyledAnchor>
+                                        <SmallTitle>{title}</SmallTitle></StyledAnchor>
                                 </Link>
                             </StyledLi>
                         )
@@ -34,6 +34,10 @@ const PostList = ({posts}) => {
     )
 }
 export default PostList
+
+const SmallTitle = styled.p`
+ margin-top: 0.7em;
+`
 
 const StyledSidebar = styled.div`
   padding: 3em;
@@ -63,5 +67,5 @@ const StyledUl = styled.ul`
   list-style: none;
   font-size: large;
   padding: 0;
-  margin: 0;
+  margin-top: 2em;
 `

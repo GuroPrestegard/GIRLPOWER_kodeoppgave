@@ -4,18 +4,17 @@ import styled from "styled-components"
 import PostList from "../components/PostList.js";
 import DisplayAuthors from "../components/DisplayAuthors.js";
 import { Title} from "../styles/styles"
-import Layout from "../components/Layout";
 
 
 const Index = ({posts, authors}) => {
     return (
-        <Layout>
+        <>
             <PostList posts={posts}/>
             <Content>
                 <Title>Velkommen til Girlpower workshop!</Title>
                 <DisplayAuthors authors={authors}/>
             </Content>
-        </Layout>
+        </>
     )
 }
 
@@ -25,7 +24,7 @@ export const getStaticProps = async () => {
     `)
 
     const authors = await client.fetch(groq`
-      *[_type == "author"] 
+      *[_type == "author"]
     `)
 
 

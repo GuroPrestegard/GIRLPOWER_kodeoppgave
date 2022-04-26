@@ -16,6 +16,7 @@ time, mark, audio, video, #__next {
     border: 0;
     font-size: 100%;
     font: inherit;
+    font-family: 'Montserrat', sans-serif;
     vertical-align: baseline;
 }
 
@@ -51,7 +52,7 @@ html, body, #__next  {
     height: 100%;
     width: 100%;
 }
-#__next > div {
+/* #__next > div {
     height: 100%;
     width: 100%;
-}
+} */
