@@ -91,8 +91,6 @@ const StyledArticle = styled.div`
   border-radius: 15px;
   height: 100%;
   min-width: 50%;
-  
-
 `
 
 const StyledColumn = styled.div`
@@ -102,7 +100,7 @@ const StyledColumn = styled.div`
 
 
 const StyledBody = styled.div`
-  p {
+  p, li {
     font-size: large;
     margin: 1em 0 1em 0;
   }
@@ -111,7 +109,7 @@ const Preamble = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-top: 4em;
+  padding: 2em 0 4em 0;
 
   img {
     border-radius: 50%;
