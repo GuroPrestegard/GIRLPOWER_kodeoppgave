@@ -3,17 +3,20 @@ import client from '../Client.js'
 import styled from "styled-components"
 import PostList from "../components/PostList.js";
 import DisplayAuthors from "../components/DisplayAuthors.js";
-import { Title} from "../styles/styles"
+import {Title} from "../styles/styles"
 
 
 const Index = ({posts, authors}) => {
     return (
         <>
             <PostList posts={posts} title={"Innlegg"} scroll={true}/>
-            <Content>
-                <Title>Velkommen til Girlpower workshop!</Title>
-                <DisplayAuthors authors={authors}/>
-            </Content>
+            <Grid>
+
+                <Content>
+                    <Title>Velkommen til Girlpower workshop!</Title>
+                    <DisplayAuthors authors={authors}/>
+                </Content>
+            </Grid>
         </>
     )
 }
@@ -37,14 +40,25 @@ export const getStaticProps = async () => {
 }
 
 export default Index
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); 
+  grid-template-rows: repeat(10, 1fr);
+`
+
 const Content = styled.div`
+  padding: 3em 2em 2em 0;
+  grid-column-start: 3;
+  grid-column-end: span 6;
+  grid-row-start: 2;
+  grid-row-end: span 8;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: white;
-  margin: 10em 15em 10em 15em;
   align-items: center;
   border-radius: 15px;
+  background-color: white;
 
 `
 

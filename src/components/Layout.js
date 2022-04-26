@@ -11,17 +11,33 @@ const Layout = ({children}) => {
 
     return (
         <Content>
-          <Header>
-            <Link href={"/"}>
-              <Image src={staccLogo} layout="fill" objectFit="contain"/>
-            </Link>
-          </Header>
+            <Header>
+                <Link href={"/"}>
+                    <Image src={staccLogo} layout="fill" objectFit="contain"/>
+                </Link>
+            </Header>
             <Menu>
-                <p>hello</p>
+                <ul>
+                    <li>
+                        <Link href={"/allPosts"}>
+                            Alle poster
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href={"/postsByCategory"}>
+                           kategorier
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href={"/"}>
+                           Hjem
+                        </Link>
+                    </li>
+                </ul>
             </Menu>
-        <LayoutWrapper>
-          {children}
-        </LayoutWrapper>
+            <LayoutWrapper>
+                {children}
+            </LayoutWrapper>
         </Content>
     )
 }
@@ -33,7 +49,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
 
-  img{
+  img {
     cursor: pointer;
   }
 `

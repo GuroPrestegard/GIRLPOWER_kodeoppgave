@@ -5,7 +5,6 @@ import {urlForImage} from "../utils/urlForImage";
 import {Title} from "../styles/styles";
 
 const PostList = ({posts, title, scroll}) => {
-    console.log(posts)
     return (
         <StyledSidebar scroll={scroll}>
             <Title>{title}</Title>
@@ -42,7 +41,8 @@ const SmallTitle = styled.h3`
 
 const StyledSidebar = styled.div`
   padding: 3em;
-  overflow-y: ${(props) => props.scroll ? "scroll" : "auto" };
+  height: 100%;
+  justify-content: center;
 `
 const StyledAnchor = styled.a`
   :visited {

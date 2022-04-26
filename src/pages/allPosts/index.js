@@ -15,7 +15,7 @@ const Index = ({posts, authors}) => {
 
 export const getStaticProps = async () => {
     const posts = await client.fetch(groq`
-      *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
+      *[_type == "post"]
     `)
     return {
         props: {
@@ -29,11 +29,6 @@ export default Index
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: white;
-  margin: 5em;
-  padding: 5em;
-  align-items: center;
-  border-radius: 15px;
+  margin-bottom: 2em;
 `
 
