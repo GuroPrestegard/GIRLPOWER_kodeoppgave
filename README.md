@@ -33,6 +33,9 @@ kjør:
 - public dataset
 - output path - trykk enter
 
+deploy sanity: 
+`sanity deploy`
+
 
 ###For å innstallere dependencies (stå i root av prosjektet, altså øverste nivå)
 
