@@ -4,11 +4,11 @@ import Link from "next/link";
 import {urlForImage} from "../utils/urlForImage";
 import {Title} from "../styles/styles";
 
-const PostList = ({posts}) => {
+const PostList = ({posts, title, scroll}) => {
     console.log(posts)
     return (
-        <StyledSidebar>
-            <Title>Innlegg</Title>
+        <StyledSidebar scroll={scroll}>
+            <Title>{title}</Title>
             <StyledUl>
                 {posts?.length > 0 && posts?.map(
                     ({_id, title = '', slug = '', publishedAt = '', mainImage}) =>
@@ -19,7 +19,7 @@ const PostList = ({posts}) => {
                                         {mainImage && (
                                             <img
                                                 src={urlForImage(mainImage)
-                                                    .width(300)
+                                                    .width(200)
                                                     .url()}
                                                 alt={"thumbnail"}
                                             />
@@ -35,25 +35,23 @@ const PostList = ({posts}) => {
 }
 export default PostList
 
-const SmallTitle = styled.p`
- margin-top: 0.7em;
+const SmallTitle = styled.h3`
+  margin-top: 0.7em;
+  text-decoration: underline;
 `
 
 const StyledSidebar = styled.div`
   padding: 3em;
-  overflow-y: scroll ;
-
+  overflow-y: ${(props) => props.scroll ? "scroll" : "auto" };
 `
 const StyledAnchor = styled.a`
   :visited {
-    color: red;
+    color: blue;
   }
   cursor: pointer;
   display: flex;
   flex-direction: column;
-
 `
-
 
 const StyledLi = styled.li`
   margin-bottom: 5em;
@@ -61,7 +59,6 @@ const StyledLi = styled.li`
   padding: 2em;
   border-radius: 5px;
 `
-
 
 const StyledUl = styled.ul`
   list-style: none;

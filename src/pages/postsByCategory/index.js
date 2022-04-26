@@ -3,13 +3,14 @@ import client from '../../Client.js'
 import styled from "styled-components"
 import {Title} from "../../styles/styles";
 import PostList from "../../components/PostList";
+import {backgroundColor} from "../../styles/styles";
 
 
 const Index = ({posts, authors}) => {
     return (
-            <Content>
-                <PostList posts={posts} title={"Alle innlegg"}/>
-            </Content>
+        <Content>
+            <PostList posts={posts} title={"Innlegg etter kategori"}/>
+        </Content>
     )
 }
 
@@ -36,4 +37,5 @@ const Content = styled.div`
   align-items: center;
   border-radius: 15px;
 `
+
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Header = ({children}) => {
+const Menu = ({children}) => {
     return (
         <HeaderWrapper>
             {children}
@@ -8,7 +8,7 @@ const Header = ({children}) => {
     )
 }
 
-export default Header
+export default Menu
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -16,4 +16,5 @@ const HeaderWrapper = styled.div`
   background-color: black;
   width: 100vw;
   height: 100px;
+  color: white;
 `

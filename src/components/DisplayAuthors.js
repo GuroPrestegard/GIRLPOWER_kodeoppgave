@@ -36,7 +36,8 @@ export default DisplayAuthors
 const DisplayAuthorsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-
+  width: 70%;
+  min-width: 80%;
 `
 
 const StyledContent = styled.div`

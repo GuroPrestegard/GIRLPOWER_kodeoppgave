@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 export const Title = styled.h1`
+  
     font-size: xxx-large;
+  word-wrap: normal;
+  
 `
 export const backgroundColor = "#f5f5f7"
 

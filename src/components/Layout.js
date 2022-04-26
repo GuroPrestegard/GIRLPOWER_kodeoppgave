@@ -4,6 +4,7 @@ import Image from 'next/image'
 import staccLogo from "../../public/stacc_logo_white.png"
 import Header from "./Header";
 import Link from "next/link";
+import Menu from "./Menu";
 
 
 const Layout = ({children}) => {
@@ -15,6 +16,9 @@ const Layout = ({children}) => {
               <Image src={staccLogo} layout="fill" objectFit="contain"/>
             </Link>
           </Header>
+            <Menu>
+                <p>hello</p>
+            </Menu>
         <LayoutWrapper>
           {children}
         </LayoutWrapper>

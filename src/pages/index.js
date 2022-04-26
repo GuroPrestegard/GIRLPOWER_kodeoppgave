@@ -9,7 +9,7 @@ import { Title} from "../styles/styles"
 const Index = ({posts, authors}) => {
     return (
         <>
-            <PostList posts={posts}/>
+            <PostList posts={posts} title={"Innlegg"} scroll={true}/>
             <Content>
                 <Title>Velkommen til Girlpower workshop!</Title>
                 <DisplayAuthors authors={authors}/>
@@ -20,7 +20,7 @@ const Index = ({posts, authors}) => {
 
 export const getStaticProps = async () => {
     const posts = await client.fetch(groq`
-      *[_type == "post" && publishedAt < now()] | order(publishedAt asc)
+      *[_type == "post"] 
     `)
 
     const authors = await client.fetch(groq`
@@ -42,8 +42,7 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: white;
-  margin: 5em;
-  padding: 5em;
+  margin: 10em 15em 10em 15em;
   align-items: center;
   border-radius: 15px;
 
