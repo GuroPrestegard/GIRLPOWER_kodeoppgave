@@ -4,9 +4,9 @@ import imageUrlBuilder from '@sanity/image-url'
 import {PortableText} from '@portabletext/react'
 import client from '../../Client.js'
 import {urlForImage} from '../../utils/urlForImage.js'
-import {image} from "../../utils/image.js";
 import {backgroundColor, Content, Title} from "../../styles/styles";
 import styled from "styled-components";
+import React from "react";
 
 
 const Post = ({post}) => {
@@ -17,12 +17,12 @@ const Post = ({post}) => {
         authorImage,
         body = []
     } = post || {}
+    console.log(body)
     return (
         <Layout>
             <StyledArticle>
                 <Title>{title}</Title>
                 <Preamble>
-
                     {authorImage && (
                         <div>
                             <img
@@ -40,14 +40,28 @@ const Post = ({post}) => {
                         </StyledCategories>
                     )}
                 </Preamble>
-                <PortableText
-                    value={body}
-                    components={{
-                        types: {
-                            image
-                        }
-                    }}
-                />
+                <StyledBody>
+
+                    <PortableText
+                        value={body}
+                        components={{
+                            types: {
+                                image: ({value}) => {
+                                    if (!value?.asset?._ref) {
+                                        return null
+                                    }
+                                    return (
+                                        <StyledImg
+                                            alt={value.alt || ' '}
+                                            loading="lazy"
+                                            src={urlForImage(value).width(1000).height(500).fit('max').auto('format')}
+                                        />
+                                    )
+                                },
+                            }
+                        }}
+                    />
+                </StyledBody>
             </StyledArticle>
         </Layout>
     )
@@ -57,6 +71,10 @@ const StyledCategories = styled.ul`
   display: flex;
   flex-direction: row;
   list-style: none;
+`
+
+const StyledImg = styled.img`
+    border: solid 0.5px lightgrey;
 `
 
 const StyledArticle = styled.div`
@@ -77,13 +95,22 @@ const Layout = styled.div`
   background-color: ${backgroundColor};
   justify-content: center;
   align-items: center;
-
 `
 
+const StyledBody = styled.div`
+  p {
+    font-size: large;
+    margin: 1em 0 1em 0;
+  }
+`
 const Preamble = styled.div`
   display: flex;
   flex-direction: row;
-
+  align-items: center;
+  img {
+    border-radius: 50%;
+    padding-right: 1em;
+  }
 `
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
