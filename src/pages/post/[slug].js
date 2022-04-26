@@ -85,7 +85,7 @@ const StyledArticle = styled.div`
   padding: 5em;
   align-items: center;
   border-radius: 15px;
-  height: 100%;
+  height: fit-content;
   min-width: 50%;
 `
 
