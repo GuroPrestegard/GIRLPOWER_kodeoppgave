@@ -22,22 +22,24 @@ const Post = ({post}) => {
             <StyledArticle>
                 <Title>{title}</Title>
                 <Preamble>
-                    {authorImage && (
-                        <div>
-                            <img
-                                src={urlForImage(authorImage)
-                                    .width(50)
-                                    .url()}
-                                alt={`${name}'s picture`}
-                            />
-                        </div>
-                    )}
-                    <div>Skrive av {name}</div>
+                        {authorImage && (
+                            <div>
+                                <img
+                                    src={urlForImage(authorImage)
+                                        .width(50)
+                                        .url()}
+                                    alt={`${name}'s picture`}
+                                />
+                            </div>
+                        )}
+                    <StyledColumn>
+                        <div>Skrive av {name}</div>
                     {categories && (
                         <StyledCategories>
-                            {`Postet i: ${categories.map(category => category)}`}
+                            {`Postet i: ${categories.map((category, i) => "" + category + (i < categories.length - 1 ? ", " : ""))}`}
                         </StyledCategories>
                     )}
+                    </StyledColumn>
                 </Preamble>
                 <StyledBody>
 
@@ -74,7 +76,7 @@ const StyledCategories = styled.ul`
 `
 
 const StyledImg = styled.img`
-    border: solid 0.5px lightgrey;
+  border: solid 0.5px lightgrey;
 `
 
 const StyledArticle = styled.div`
@@ -88,6 +90,11 @@ const StyledArticle = styled.div`
   border-radius: 15px;
   min-height: 50%;
   min-width: 50%;
+`
+
+const StyledColumn = styled.div`
+    display: flex;
+  flex-direction: column;
 `
 
 const Layout = styled.div`
@@ -108,6 +115,7 @@ const Preamble = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-top: 4em;
   img {
     border-radius: 50%;
     padding-right: 1em;
