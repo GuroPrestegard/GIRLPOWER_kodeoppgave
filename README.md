@@ -65,3 +65,6 @@ Start på oppgaver
 ## Konfigurere Sanity og Vercel
 
 ### Se informasjon 
+https://girlpower-kodeoppgave.vercel.app/post/sanity
+
+https://girlpower-kodeoppgave.vercel.app/post/vercel
