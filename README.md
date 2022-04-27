@@ -59,7 +59,7 @@ Klon ned repoet (altså last ned)
 
 ### installere sanity studio (stå i girlpowersanity mappa)
 
-`npm install`
+`sanity install`
 
 
 # Begynn på oppgaver!
