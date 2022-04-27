@@ -2,63 +2,57 @@ import groq from 'groq'
 import client from '../Client.js'
 import styled from "styled-components"
 import PostList from "../components/PostList.js";
-import DisplayAuthors from "../components/DisplayAuthors.js";
+import AllAuthors from "../components/AllAuthors.js";
 import {Title} from "../styles/styles"
+import PostComponent from "../components/PostComponent";
 
 
-const Index = ({posts, authors}) => {
+const Index = ({mainPagePost, posts}) => {
+    console.log(mainPagePost)
     return (
         <>
             <PostList posts={posts} title={"Innlegg"} scroll={true}/>
-            <Grid>
+            <Content>
 
-                <Content>
-                    <Title>Velkommen til Girlpower workshop!</Title>
-                    <DisplayAuthors authors={authors}/>
-                </Content>
-            </Grid>
+            <PostComponent title={mainPagePost?.title}
+                           name={mainPagePost?.name}
+                           categories={mainPagePost?.categories}
+                           authorImage={mainPagePost?.authorImage}
+                           body={mainPagePost?.body}/>
+            </Content>
         </>
     )
 }
 
 export const getStaticProps = async () => {
-    const posts = await client.fetch(groq`
-      *[_type == "post"] 
-    `)
+    const mainPagePost = await client.fetch(groq`
+    *[_type == "post" && slug.current == $slug][0]{
+                            title,
+                            "name": author->name,
+                            "categories": categories[]->title,
+                            "authorImage": author->image,
+                            body
+                        }
+    `, {slug: "girlpower"})
 
-    const authors = await client.fetch(groq`
-      *[_type == "author"]
+    const posts = await client.fetch(groq`
+      *[_type == "post"]
     `)
 
 
     return {
         props: {
-            posts, authors
+            mainPagePost, posts
         },
         revalidate: 1
     }
 }
 
 export default Index
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(10, 1fr); 
-  grid-template-rows: repeat(10, 1fr);
-`
 
 const Content = styled.div`
-  padding: 3em 2em 2em 0;
-  grid-column-start: 3;
-  grid-column-end: span 6;
-  grid-row-start: 2;
-  grid-row-end: span 8;
-
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px;
-  background-color: white;
-
-`
-
+  margin-bottom: 2em;
+  max-width: 70%;
+  `

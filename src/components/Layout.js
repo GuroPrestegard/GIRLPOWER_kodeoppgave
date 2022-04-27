@@ -19,20 +19,21 @@ const Layout = ({children}) => {
             <Menu>
                 <ul>
                     <li>
+                        <Link href={"/"}>
+                           Hjem
+                        </Link>
+                    </li>
+                    <li>
                         <Link href={"/allPosts"}>
                             Alle poster
                         </Link>
                     </li>
                     <li>
-                        <Link href={"/postsByCategory"}>
-                           kategorier
+                        <Link href={"/allAuthors"}>
+                            Alle forfattere
                         </Link>
                     </li>
-                    <li>
-                        <Link href={"/"}>
-                           Hjem
-                        </Link>
-                    </li>
+
                 </ul>
             </Menu>
             <LayoutWrapper>

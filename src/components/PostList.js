@@ -41,7 +41,8 @@ const SmallTitle = styled.h3`
 
 const StyledSidebar = styled.div`
   padding: 3em;
-  height: 100%;
+  height: fit-content;
+  width: fit-content;
   justify-content: center;
 `
 const StyledAnchor = styled.a`
@@ -51,13 +52,20 @@ const StyledAnchor = styled.a`
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  img {
+    max-width: 6em;
+    max-height: 6em;
+  }
+
 `
 
 const StyledLi = styled.li`
-  margin-bottom: 5em;
+  margin-bottom: 2em;
   background-color: white;
-  padding: 2em;
+  padding: 1em;
   border-radius: 5px;
+  max-width: 10em;
 `
 
 const StyledUl = styled.ul`

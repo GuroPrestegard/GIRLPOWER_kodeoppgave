@@ -7,6 +7,7 @@ import {urlForImage} from '../../utils/urlForImage.js'
 import {backgroundColor, Content, Title} from "../../styles/styles";
 import styled from "styled-components";
 import React from "react";
+import PostComponent from "../../components/PostComponent";
 
 const Post = ({post}) => {
     const {
@@ -16,102 +17,14 @@ const Post = ({post}) => {
         authorImage,
         body = []
     } = post || {}
-    console.log(body)
     return (
-        <StyledArticle>
-            <Title>{title}</Title>
-            <Preamble>
-                {authorImage && (
-                    <div>
-                        <img
-                            src={urlForImage(authorImage)
-                                .width(50)
-                                .url()}
-                            alt={`${name}'s picture`}
-                        />
-                    </div>
-                )}
-                <StyledColumn>
-                    <div>Skrive av {name}</div>
-                    {categories && (
-                        <StyledCategories>
-                            {`Postet i: ${categories.map((category, i) => "" + category + (i < categories.length - 1 ? ", " : ""))}`}
-                        </StyledCategories>
-                    )}
-                </StyledColumn>
-            </Preamble>
-            <StyledBody>
-
-                <PortableText
-                    value={body}
-                    components={{
-                        types: {
-                            image: ({value}) => {
-                                if (!value?.asset?._ref) {
-                                    return null
-                                }
-                                return (
-                                    <StyledImg
-                                        alt={value.alt || ' '}
-                                        loading="lazy"
-                                        src={urlForImage(value).width(1000).height(500).fit('max').auto('format')}
-                                    />
-                                )
-                            },
-                        }
-                    }}
-                />
-            </StyledBody>
-        </StyledArticle>
-
+        <PostComponent title={title}
+                       name={name}
+                       categories={categories}
+                       authorImage={authorImage}
+                       body={body}/>
     )
 }
-
-const StyledCategories = styled.ul`
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-`
-
-const StyledImg = styled.img`
-  border: solid 0.5px lightgrey;
-`
-
-const StyledArticle = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  margin: 5em;
-  padding: 5em;
-  align-items: center;
-  border-radius: 15px;
-  height: fit-content;
-  min-width: 50%;
-`
-
-const StyledColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-
-const StyledBody = styled.div`
-  p, li {
-    font-size: large;
-    margin: 1em 0 1em 0;
-  }
-`
-const Preamble = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 2em 0 4em 0;
-
-  img {
-    border-radius: 50%;
-    padding-right: 1em;
-  }
-`
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
                             title,

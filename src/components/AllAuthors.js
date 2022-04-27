@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {urlForImage} from "../utils/urlForImage";
 import {PortableText} from "@portabletext/react";
 
-const DisplayAuthors = ({authors}) => {
+const AllAuthors = ({authors}) => {
 
     return (
         <DisplayAuthorsWrapper>
@@ -31,25 +31,34 @@ const DisplayAuthors = ({authors}) => {
         </DisplayAuthorsWrapper>
     )
 }
-export default DisplayAuthors
+export default AllAuthors
 
 const DisplayAuthorsWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  height: fit-content;
+  width: fit-content;
 `
 
 const StyledContent = styled.div`
-  padding: 5em;
+  width: fit-content;
+  height: fit-content;
+  padding: 2em;
+  margin-bottom: 2em;
+  background-color: white;
+  border-radius: 10px;
+
 `
 
 const Section = styled.div`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+  max-width: 40em;
 `
 
 const Title = styled.p`
-  font-size: larger;
+  font-size: x-large;
   display: flex;
   align-self: center;
 `
