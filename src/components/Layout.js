@@ -57,7 +57,7 @@ const Content = styled.div`
 
 const LayoutWrapper = styled.div`
   display: flex;
-  background-color: pink;
+  background-color: #F2C9BB;
   height: 100%;
   justify-content: center;
   overflow-y: scroll;
