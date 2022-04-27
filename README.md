@@ -57,14 +57,10 @@ Klon ned repoet (altså last ned)
 `npm run dev`
 
 
-Start på oppgaver
-### Starte sanity studio (stå i girlpowersanity mappa)
+### installere sanity studio (stå i girlpowersanity mappa)
 
 `npm install`
 
-## Konfigurere Sanity og Vercel
 
-### Se informasjon 
-https://girlpower-kodeoppgave.vercel.app/post/sanity
-
-https://girlpower-kodeoppgave.vercel.app/post/vercel
+# Begynn på oppgaver!
+Spør om hjelp om de står fast!
