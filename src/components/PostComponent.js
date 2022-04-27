@@ -25,7 +25,7 @@ const PostComponent = ({authorImage, name, categories, body, title}) => {
                     <div>Skrive av {name}</div>
                     {categories && (
                         <StyledCategories>
-                            {`Postet i: ${categories.map((category, i) => "" + category + (i < categories.length - 1 ? ", " : ""))}`}
+                            {`Postet i: ${categories.map((category, i) => category )}`}
                         </StyledCategories>
                     )}
                 </StyledColumn>
