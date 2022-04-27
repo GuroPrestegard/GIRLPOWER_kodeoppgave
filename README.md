@@ -1,51 +1,61 @@
 # Girlpower kodeoppgave 
 
-
-## Opprett kontoer: 
-
-- Lag sanity konto: https://www.sanity.io/login
-- Lag konto i vercel: https://vercel.com/signup
 ## Installer 
+Om du ikkje allerede har dette installert:
 - npm: https://nodejs.org/en/ 
   - husk å opne å lukke cmd etterpå for å få oppdatert path variables
   - sjekk installasjonen:
     - `node -v` 
     - `npm -v`
-    
+- git: https://git-scm.com/downloads 
+  - sjekk installsjon
+    - `git version`
+- Innstaller ein kodeeditor som har støtte for javascript
+  - Gjerne Visual Studio Code
+    - https://code.visualstudio.com/
+  - Men andre som webstorm eller atom fungerer også fint
 
-###Innstaller vercel CLI 
 
-`npm install -g vercel`
+## Opprett kontoer:
+Me treng nokon kontoar i løpet av workshopen: 
 
-Logg inn: `vercel login`
+- Sanity konto 
+  - https://www.sanity.io/login
+  - Denne trenger me for å at de skal kunne sette opp dykkar eige CMS, som me bruker til å lagre data. 
+- Vercel konto 
+  - https://vercel.com/signup
+  - Denne treng me for å deploye appen, 
+
+
+
+##Installere CLI
+Me treng eit par kommandlinjeverktøy for å kommunisere med Sanity og for å deploye med vercel
 
 ###Innstaller sanity CLI
 
 `npm install -g @sanity/cli`
 
-Stå i GIRLPOWER_kodeoppgave/girlpowersanity
+###Innstaller vercel CLI
 
-kjør:
-`sanity init`
+`npm install -g vercel`
 
-- new project
-- select organization: none
-- public dataset
-- output path - trykk enter
 
-deploy sanity: 
-`sanity deploy`
+##Konfigurere Sanity og Vercel
+###Se informasjon 
 
+##Kjøre prosjektet
 
 ###For å innstallere dependencies (stå i root av prosjektet, altså øverste nivå)
 
- `npm install`
-
+`npm install`
 
 ###For å starte applikasjonen (stå i root av prosjektet, altså øverste nivå)
 
- `npm run dev`
+`npm run dev`
 
 ###Starte sanity studio (stå i girlpowersanity mappa)
 
- `sanity start`
+`npm install`
+
+`sanity start`
+

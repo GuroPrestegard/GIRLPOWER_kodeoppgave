@@ -44,7 +44,7 @@ const PostComponent = ({authorImage, name, categories, body, title}) => {
                                     <StyledImg
                                         alt={value.alt || ' '}
                                         loading="lazy"
-                                        src={urlForImage(value).width(600).height(300).fit('max').auto('format')}
+                                        src={urlForImage(value).fit('max').auto('format')}
                                     />
                                 )
                             },
@@ -67,7 +67,9 @@ const StyledCategories = styled.ul`
 const StyledImg = styled.img`
   display: flex;
   justify-self: center;
+  align-self: center;
   border: solid 0.5px lightgrey;
+  max-width: 50em;
 `
 
 const StyledArticle = styled.div`
