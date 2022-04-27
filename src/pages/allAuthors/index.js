@@ -18,7 +18,8 @@ export const getStaticProps = async () => {
     `)
     return {
         props: {
-           authors
+
+            
         },
         revalidate: 1
     }
@@ -28,6 +29,6 @@ export default Index
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 2em 0 2em 0 ;
+  margin: 2em 0 2em 0;
 `
 
