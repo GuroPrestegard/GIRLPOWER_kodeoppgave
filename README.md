@@ -38,6 +38,12 @@ Me treng eit par kommandlinjeverktøy for å kommunisere med Sanity og for å de
 `npm install -g vercel`
 
 ## Klone repo
+åpne terminalen/cmd
+Lag ein folder for git prosjekter (om du ikkje allerede har det)
+`mkdir projects`
+Gå til projects
+`cd projects`
+Klon ned repoet (altså last ned)
 `git clone https://github.com/GuroPrestegard/GIRLPOWER_kodeoppgave.git`
 
 ## Kjøre prosjektet
