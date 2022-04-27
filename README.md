@@ -37,8 +37,10 @@ Me treng eit par kommandlinjeverktøy for å kommunisere med Sanity og for å de
 
 `npm install -g vercel`
 
+## Klone repo
+`git clone https://github.com/GuroPrestegard/GIRLPOWER_kodeoppgave.git`
 
-##K jøre prosjektet
+## Kjøre prosjektet
 
 ### For å innstallere dependencies (stå i root av prosjektet, altså øverste nivå)
 
@@ -48,11 +50,11 @@ Me treng eit par kommandlinjeverktøy for å kommunisere med Sanity og for å de
 
 `npm run dev`
 
+
+Start på oppgaver
 ### Starte sanity studio (stå i girlpowersanity mappa)
 
 `npm install`
-
-`sanity start`
 
 ## Konfigurere Sanity og Vercel
 
