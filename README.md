@@ -24,38 +24,36 @@ Me treng nokon kontoar i løpet av workshopen:
   - Denne trenger me for å at de skal kunne sette opp dykkar eige CMS, som me bruker til å lagre data. 
 - Vercel konto 
   - https://vercel.com/signup
-  - Denne treng me for å deploye appen, 
+  - Denne treng me for å deploye appen,
 
-
-
-##Installere CLI
+## Installere CLI
 Me treng eit par kommandlinjeverktøy for å kommunisere med Sanity og for å deploye med vercel
 
-###Innstaller sanity CLI
+### Innstaller sanity CLI
 
 `npm install -g @sanity/cli`
 
-###Innstaller vercel CLI
+### Innstaller vercel CLI
 
 `npm install -g vercel`
 
 
-##Konfigurere Sanity og Vercel
-###Se informasjon 
+##K jøre prosjektet
 
-##Kjøre prosjektet
-
-###For å innstallere dependencies (stå i root av prosjektet, altså øverste nivå)
+### For å innstallere dependencies (stå i root av prosjektet, altså øverste nivå)
 
 `npm install`
 
-###For å starte applikasjonen (stå i root av prosjektet, altså øverste nivå)
+### For å starte applikasjonen (stå i root av prosjektet, altså øverste nivå)
 
 `npm run dev`
 
-###Starte sanity studio (stå i girlpowersanity mappa)
+### Starte sanity studio (stå i girlpowersanity mappa)
 
 `npm install`
 
 `sanity start`
 
+## Konfigurere Sanity og Vercel
+
+### Se informasjon 
