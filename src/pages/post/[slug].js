@@ -26,53 +26,6 @@ const Post = ({post}) => {
     )
 }
 
-const StyledCategories = styled.ul`
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-`
-
-const StyledImg = styled.img`
-  border: solid 0.5px lightgrey;
-`
-
-const StyledArticle = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  margin: 5em;
-  padding: 5em;
-  align-items: center;
-  border-radius: 15px;
-  height: fit-content;
-  min-width: 50%;
-`
-
-const StyledColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-
-const StyledBody = styled.div`
-  p, li {
-    font-size: large;
-    margin: 1em 0 1em 0;
-  }
-`
-
-const Preamble = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 2em 0 4em 0;
-
-  img {
-    border-radius: 50%;
-    padding-right: 1em;
-  }
-`
-
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
                             title,
                             "name": author->name,
